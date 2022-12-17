@@ -1,0 +1,43 @@
+*{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+}
+
+#maindiv{
+      background: linear-gradient(rgba(39, 63, 77, 0.7),rgba(39, 63, 77, 0.7)), url("../img/test3.jpg") fixed center center;
+
+}
+a{
+      text-decoration: none;
+}
+
+.mainlink{
+      color: #aeb3b7;
+      font-size: 20px;
+      transition: 0.5s;
+}
+.mainlink:hover{
+      color: #fff;
+
+}
+.maindiv .bodyh{
+      font-weight: 650;
+}
+.maindiv .bodyt{
+      font-size: 25px;
+      font-weight: 400;
+}
+
+/* ============ start login page--------- */
+
+/* .header .imageDiv img{
+      background: linear-gradient(rgba(39, 63, 77, 0.7),rgba(39, 63, 77, 0.7)), url("../img/login.png") fixed center center;
+      background-color: #243949;
+      height: 660px;
+      width: 100%;
+} */
+
+
+
+/* ============end login page--------- */

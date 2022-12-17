@@ -1,0 +1,78 @@
+receivedinstalment
+
+value="<?php echo $queryResult['id']."||".$queryResult['name'] ?>"
+
+            <form action="" method="POST">
+                  <div class="card">
+                        <div class="card-body">
+                        <?php 
+                              $sql = " SELECT * FROM personal_info";
+                              $queryResult = mysqli_query(Database::dbConnect(),$sql) or die('somossa hoiche'.myqli_error(Database::dbConnect()));                             
+                        ?>
+                              <div class="row">
+                                    <div class="col-md-12">
+                                          <div class="from-group my-1">
+                                                <label for="" class="my-2">Customer Name </label>
+                                                <select name="instalment_cus_name" class="form-select" id="collectInstCustomerName" required>
+                                                      <option value="0">--select--</option>
+                                                <?php while($customerInfo =  mysqli_fetch_assoc($queryResult)){ ?>
+                                                      <option value="<?php echo $customerInfo['id'] ?>"><?php echo $customerInfo['id']. " || " . $customerInfo['name']?></option>
+                                                      <?php } ?>
+                                                      
+                                                </select>   
+                                          </div>
+                                    </div>
+                                    
+                              </div>
+                              <div class="row">
+                                    <div class="col-md-6">
+                                          <div class="from-group my-2">
+                                          <label for="" class="mb-2">Instalment no.</label>
+                                          <select name="instalment_number_ID"  class="form-select" id="instalment_number" required>
+                                                 <option value="">--Select--</option>
+                                          </select>
+                                          <!-- <input type="text" class="form-control" value="" > -->
+                                          </div>                                    
+                                    </div>
+                                    <div class="col-md-6">
+                                          <div class="from-group my-2">
+                                          <label for="" class="mb-2">Collectable Amount</label>
+                                          <div class="col">
+                                                <input readonly type="text" name="collectable_amount" id="instalment_amount" class="form-control" value="" >
+                                          </div>
+                                          </div>
+                                    </div>
+                              </div>
+                              <div class="row">
+                                    <div class="col-md-6">
+                                          <div class="from-group my-2">
+                                          <label for="" class="mb-2">Recived Amount</label>
+                                          <div class="col">
+                                                <input type="number" name="received_amount"  id="" class="form-control" required >
+                                          </div>
+                                          </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                          <div class="from-group my-2">
+                                          <?php $date = date("Y-m-d");  ?>
+                                          <label for="" class="mb-2">Payment Date</label>
+                                          <div class="col">
+                                                <input type="date" name="payment_date" id="payment_date" class="form-control" value="<?php echo $date; ?>" required>
+                                          </div>
+                                    </div>
+                                    </div>  
+                                    <div class="row">
+                                          <div class="">
+                                          <label for="" class="mb-2 mt-3">Recived Description</label>
+                                                <textarea name="receive_description" id="" class="form-control" cols="10" rows="3"></textarea>
+                                          </div>
+                                    </div>   
+                              </div>
+                              <div class="from-group mt-4">
+                                    <div class="ibtn text-end">
+                                          <button class="btn btn-primary" id="instalmentCollect" name="btn">Save</button>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </form>
